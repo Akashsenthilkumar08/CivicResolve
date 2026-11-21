@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+*/node_modules/
+__pycache__/
+*/__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Environment and sensitive keys
+.env
+*.env.local
+*.env.*.local
+!/.env.example
+
+# Local SQLite databases & uploads
+*.db
+*.sqlite
+*.sqlite3
+civicresolve.db
+server/civicresolve.db
+uploads/
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Build and distribution files
+dist/
+build/
+client/dist/
+
+# Root loose video files (clean copies live in client/public/videos/)
+/*.mp4
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+npm-debug.log*

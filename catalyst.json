@@ -1,0 +1,11 @@
+{
+  "appsail": [
+    {
+      "source": "server",
+      "name": "civicresolve-server"
+    }
+  ],
+  "client": {
+    "source": "client/dist"
+  }
+}

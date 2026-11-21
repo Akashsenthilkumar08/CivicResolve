@@ -1,0 +1,23 @@
+{
+  "name": "civicresolve-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CivicResolve - AI-Powered Civic Grievance Reporting & Resolution Platform",
+  "type": "module",
+  "scripts": {
+    "test": "node test-e2e.js && node test-ml-integration.js",
+    "clean": "node scripts/kill-ports.js",
+    "predev": "node scripts/kill-ports.js",
+    "python": "node scripts/run-python.js",
+    "server": "npm --prefix server run start",
+    "client": "npm --prefix client run dev",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"FASTAPI,SERVER,CLIENT\" -c \"yellow.bold,cyan.bold,magenta.bold\" \"npm run python\" \"npm run server\" \"npm run client\"",
+    "dev:all": "concurrently -k -p \"[{name}]\" -n \"FASTAPI,SERVER,CLIENT\" -c \"yellow.bold,cyan.bold,magenta.bold\" \"npm run python\" \"npm run server\" \"npm run client\"",
+    "dev:no-py": "concurrently -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"cyan.bold,magenta.bold\" \"npm run server\" \"npm run client\"",
+    "seed": "npm --prefix server run seed",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
